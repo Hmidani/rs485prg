@@ -110,18 +110,24 @@ class VenueForm(Form):
             ('Reggae', 'Reggae'),
             ('Rock n Roll', 'Rock n Roll'),
             ('Soul', 'Soul'),
+            ('Swing', 'Swing'),
             ('Other', 'Other'),
         ]
     )
     facebook_link = StringField(
         'facebook_link', validators=[URL()]
     )
-    website_link = StringField(
-        'website_link'
+    website = StringField(
+        'website', validators=[URL()]
     )
-
     seeking_talent = BooleanField( 'seeking_talent' )
-
+    #seetalent = BooleanField( 'seeking_talent' )
+    #if seetalent == 'y' or seetalent == 'Y':
+     #   seeking_talent = True
+    #elif seetalent == 'n' or seetalent == 'N':
+    #   seeking_talent = False
+    
+    
     seeking_description = StringField(
         'seeking_description'
     )
@@ -219,6 +225,7 @@ class ArtistForm(Form):
             ('Reggae', 'Reggae'),
             ('Rock n Roll', 'Rock n Roll'),
             ('Soul', 'Soul'),
+            ('Swing', 'Swing'),
             ('Other', 'Other'),
         ]
      )
@@ -227,12 +234,16 @@ class ArtistForm(Form):
         'facebook_link', validators=[URL()]
      )
 
-    website_link = StringField(
-        'website_link'
+    website = StringField(
+        'website', validators=[URL()]
      )
-
+     
     seeking_venue = BooleanField( 'seeking_venue' )
-
+    #if seevenue == 'y' or seevenue == 'Y':
+    #    seeking_venue = True
+    #elif seevenue == 'n' or seevenue == 'N' :
+    #    seeking_venue = False  
+        
     seeking_description = StringField(
             'seeking_description'
      )
